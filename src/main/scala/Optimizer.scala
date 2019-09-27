@@ -30,6 +30,24 @@ object Main {
                         playground + i2
                         playground + i3
 
+                        playground + DongFangMingZhuDianShiTa
+                        playground + ShiBoHuiZhongGuoGuan
+                        playground + WaiTan
+                        playground + PuDongXinQuZiMaoQu
+                        playground + ShanghaiMeiShuDianYingZhiPianChang
+                        playground + NanJingChangJiangDaQiao
+                        playground + HuaXiCun
+                        playground + HuaiYangCai
+                        playground + YiXingZiShaHu
+                        playground + XiHu
+                        playground + YueJu
+                        playground + ShiJieHuLianWangDaHui
+                        playground + LuShuiQingShanJiuShiJinShanYinShanLiNian
+
+                        playground + ZiYouMaoYiQuJianShe
+                        playground + YiDaiYiLuJianShe
+                        playground + QuYuXieTiaoFaZhan
+
                         val total = playground.calculateTotal
                         if (total > max) {
                           maxPlayground = playground
