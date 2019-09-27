@@ -30,7 +30,7 @@ class Playground extends BuildingInitializer{
     boostersRatio(_buildings.flatMap(_.boosters))(building) *
       boostersRatio(_policies.flatMap(_.boosters))(building) *
       boostersRatio(_photos.flatMap(_.boosters))(building) *
-      boostersRatio(_standaloneBooster)(building)
+      boostersRatio(_standaloneBooster)(building) *
       building.baseOutput
   }
 
