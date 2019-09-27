@@ -4,6 +4,7 @@ class Playground extends BuildingInitializer{
   private val _buildings: mutable.Set[Building] = mutable.Set()
   private val _policies: mutable.Set[Policy] = mutable.Set()
   private val _photos: mutable.Set[Photo] = mutable.Set()
+  private val _standaloneBooster: mutable.Set[Booster] = mutable.Set()
 
   def +(building: Building): Unit = {
     this._buildings add building
@@ -17,16 +18,19 @@ class Playground extends BuildingInitializer{
     this._photos add photo
   }
 
+  def +(booster: Booster): Unit = {
+    this._standaloneBooster add booster
+  }
+
   def calculateTotal: Double = {
     _buildings.toList.map(calculateBuildingOutput).sum
   }
 
   private def calculateBuildingOutput(building: Building): Double = {
-    val value = _buildings.flatMap(_.boosters)
-    val d = boostersRatio(value)(building)
-    d *
+    boostersRatio(_buildings.flatMap(_.boosters))(building) *
       boostersRatio(_policies.flatMap(_.boosters))(building) *
       boostersRatio(_photos.flatMap(_.boosters))(building) *
+      boostersRatio(_standaloneBooster)(building)
       building.baseOutput
   }
 

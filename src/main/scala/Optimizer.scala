@@ -48,6 +48,9 @@ object Main {
                         playground + YiDaiYiLuJianShe
                         playground + QuYuXieTiaoFaZhan
 
+                        playground + SingleBuildingBooster(BianLiDian, 1.5)
+                        playground + SingleBuildingBooster(CaiShiChang, 1.5)
+
                         val total = playground.calculateTotal
                         if (total > max) {
                           maxPlayground = playground

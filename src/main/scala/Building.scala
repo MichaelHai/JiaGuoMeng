@@ -10,7 +10,7 @@ abstract class CommercialBuilding extends BuildingPrototype(Commercial)
 
 abstract class IndustrialBuilding extends BuildingPrototype(Industrial)
 
-sealed class BuildingPrototype(val buildingType: BuildingType, val baseOutput: Int = 1) {
+sealed class BuildingPrototype(val buildingType: BuildingType, val baseOutput: Double = 1) {
   private val _boosters: mutable.Set[Booster] = mutable.Set()
 
   def boosters: Set[Booster] = _boosters.toSet
@@ -67,7 +67,9 @@ case object WuJinDian extends CommercialBuilding
 
 case object MuWu extends ResidentialBuilding
 
-case object PingFang extends ResidentialBuilding
+case object PingFang extends ResidentialBuilding {
+  override val baseOutput: Double = 1.1
+}
 
 case object MuCaiChang extends IndustrialBuilding
 
@@ -79,7 +81,9 @@ case object XueXiao extends CommercialBuilding
 
 case object TuShuCheng extends CommercialBuilding
 
-case object MinShiZhai extends CommercialBuilding
+case object MinShiZhai extends CommercialBuilding {
+  override val baseOutput: Double = 1.52
+}
 
 case object GangTieChang extends IndustrialBuilding
 
