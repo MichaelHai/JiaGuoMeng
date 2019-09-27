@@ -37,4 +37,8 @@ class Playground extends BuildingInitializer{
   private def boostersRatio(boosters: IterableOnce[Booster])(building: Building) = {
     boosters.filter(booster => booster isMatch building).map(_.boosterRatio).sum + 1;
   }
+
+  override def toString: String = {
+    this._buildings.toString()
+  }
 }

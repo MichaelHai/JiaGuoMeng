@@ -30,6 +30,10 @@ sealed class BuildingPrototype(val buildingType: BuildingType, val baseOutput: D
     this
   }
 
+  override def toString: String = {
+    this.getClass.getName
+  }
+
   def >>>(boosterRatio: Double): BuildingPrototype = {
     this._boosters add AllBooster(boosterRatio)
     this
@@ -41,6 +45,8 @@ sealed class Building(val prototype: BuildingPrototype, val star: Int) {
   def boosters: Set[Booster] = prototype.boosters
     .map(booster => new Booster(booster.targetMatcher, booster.boosterRatio * star))
   def baseOutput: Double = prototype.baseOutput * Building.starMultiplier(star)
+
+  override def toString: String = prototype.toString
 }
 
 object Building {

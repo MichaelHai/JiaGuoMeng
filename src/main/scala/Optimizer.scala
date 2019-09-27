@@ -19,37 +19,7 @@ object Main {
                   i1 => industrial.filterNot(_ == i1).foreach(
                     i2 => industrial.filterNot(_ == i1).filterNot(_ == i2).foreach(
                       i3 => {
-                        val playground = new Playground
-                        playground + r1
-                        playground + r2
-                        playground + r3
-                        playground + c1
-                        playground + c2
-                        playground + c3
-                        playground + i1
-                        playground + i2
-                        playground + i3
-
-                        playground + DongFangMingZhuDianShiTa
-                        playground + ShiBoHuiZhongGuoGuan
-                        playground + WaiTan
-                        playground + PuDongXinQuZiMaoQu
-                        playground + ShanghaiMeiShuDianYingZhiPianChang
-                        playground + NanJingChangJiangDaQiao
-                        playground + HuaXiCun
-                        playground + HuaiYangCai
-                        playground + YiXingZiShaHu
-                        playground + XiHu
-                        playground + YueJu
-                        playground + ShiJieHuLianWangDaHui
-                        playground + LuShuiQingShanJiuShiJinShanYinShanLiNian
-
-                        playground + ZiYouMaoYiQuJianShe
-                        playground + YiDaiYiLuJianShe
-                        playground + QuYuXieTiaoFaZhan
-
-                        playground + SingleBuildingBooster(BianLiDian, 1.5)
-                        playground + SingleBuildingBooster(CaiShiChang, 1.5)
+                        val playground: Playground = setupPlayground(r1, r2, r3, c1, c2, c3, i1, i2, i3)
 
                         val total = playground.calculateTotal
                         if (total > max) {
@@ -67,6 +37,46 @@ object Main {
       )
     )
 
-    println(maxPlayground);
+    println(maxPlayground)
+    println(max)
+
+    val playground = setupPlayground(2 * FangZhiChang, 2 * MuCaiChang, 2 * ShiPinChang, 3 * BianLiDian, 3 * CaiShiChang, MinShiZhai, 2 * PingFang, 3 * JuMingLou, 2 * MuWu);
+    println(playground.calculateTotal)
+  }
+
+  private def setupPlayground(r1: Building, r2: Building, r3: Building, c1: Building, c2: Building, c3: Building, i1: Building, i2: Building, i3: Building) = {
+    val playground = new Playground
+    playground + r1
+    playground + r2
+    playground + r3
+    playground + c1
+    playground + c2
+    playground + c3
+    playground + i1
+    playground + i2
+    playground + i3
+
+    playground + DongFangMingZhuDianShiTa
+    playground + ShiBoHuiZhongGuoGuan
+    playground + WaiTan
+    playground + PuDongXinQuZiMaoQu
+    playground + ShanghaiMeiShuDianYingZhiPianChang
+    playground + NanJingChangJiangDaQiao
+    playground + HuaXiCun
+    playground + HuaiYangCai
+    playground + YiXingZiShaHu
+    playground + XiHu
+    playground + YueJu
+    playground + ShiJieHuLianWangDaHui
+    playground + LuShuiQingShanJiuShiJinShanYinShanLiNian
+
+    playground + ZiYouMaoYiQuJianShe
+    playground + YiDaiYiLuJianShe
+    playground + QuYuXieTiaoFaZhan
+    playground + JiaGuoZhiGuang
+
+    playground + SingleBuildingBooster(BianLiDian, 1.5)
+    playground + SingleBuildingBooster(CaiShiChang, 1.5)
+    playground
   }
 }
